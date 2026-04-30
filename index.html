@@ -226,10 +226,20 @@
     .insight-card--compact .stat-box .lbl { font-size: 10px; }
     .insight-thumb { aspect-ratio: 9/14; position: relative; overflow: hidden; cursor: pointer; display: block; text-decoration: none; color: inherit; }
     .thumb-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .thumb-img--primary,
+    .thumb-img--swap { transition: opacity 0.3s ease; }
+    .thumb-img--swap { opacity: 0; }
+    .thumb-img--contain { object-fit: contain; background: #050505; }
+    .insight-card:hover .insight-thumb--swap .thumb-img--primary,
+    .insight-thumb--swap:focus-visible .thumb-img--primary { opacity: 0; }
+    .insight-card:hover .insight-thumb--swap .thumb-img--swap,
+    .insight-thumb--swap:focus-visible .thumb-img--swap { opacity: 1; }
+    .insight-card:hover .insight-thumb--swap .play-overlay,
+    .insight-thumb--swap:focus-visible .play-overlay { opacity: 0; }
     .insight-card.featured .insight-thumb { aspect-ratio: auto; min-height: 340px; }
     .thumb-bg { position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; }
     .thumb-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--on-dark-muted); font-weight: 600; }
-    .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); transition: background 0.3s; }
+    .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); transition: background 0.3s, opacity 0.3s; }
     .insight-card:hover .play-overlay, .work-card:hover .play-overlay { background: rgba(0,0,0,0.22); }
     .play-btn { width: 56px; height: 56px; border-radius: 50%; background: var(--gold-on-dark); color: var(--dark); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; box-shadow: 0 4px 16px rgba(0,0,0,0.35); border: 2px solid rgba(255,255,255,0.9); }
     .insight-body { padding: 28px; }
@@ -427,7 +437,7 @@
         <div class="lang-pills">
           <span class="pill">Français</span>
           <span class="pill">English</span>
-          <span class="pill">Español</span>
+          <!-- <span class="pill">Español</span> -->
         </div>
       </div>
     </div>
@@ -566,8 +576,9 @@
 
       <div class="insights-secondary-row">
       <div class="insight-card insight-card--compact">
-        <a class="insight-thumb" href="https://vt.tiktok.com/ZS9Uv8NNE/" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#010101,#1A1208);" aria-label="Open TikTok: Walk Out Challenge brand video (opens in new tab)">
-          <img class="thumb-img" src="adora-thumbnails/tiktok-walkout.jpg" alt="" loading="lazy" decoding="async" width="630" height="630" />
+        <a class="insight-thumb insight-thumb--swap" href="https://www.tiktok.com/@adozillionhomesandrealty/video/7583013796717939989" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#010101,#1A1208);" aria-label="Open TikTok: Walk Out Challenge brand video (opens in new tab)">
+          <img class="thumb-img thumb-img--primary" src="adora-thumbnails/tiktok-walkout-thumb.jpg" alt="" loading="lazy" decoding="async" width="499" height="1080" />
+          <img class="thumb-img thumb-img--swap" src="adora-thumbnails/tiktok-walkout-stats.jpg" alt="" loading="lazy" decoding="async" width="499" height="1080" />
           <div class="play-overlay"><div class="play-btn" aria-hidden="true">▶</div></div>
         </a>
         <div class="insight-body">
@@ -580,13 +591,14 @@
             <div class="stat-box"><span class="num">107</span><span class="lbl">Shares</span></div>
             <div class="stat-box"><span class="num">109</span><span class="lbl">Saves</span></div>
           </div>
-          <a class="watch-link" href="https://vt.tiktok.com/ZS9Uv8NNE/" target="_blank" rel="noopener noreferrer">Watch →</a>
+          <a class="watch-link" href="https://www.tiktok.com/@adozillionhomesandrealty/video/7583013796717939989" target="_blank" rel="noopener noreferrer">Watch →</a>
         </div>
       </div>
 
       <div class="insight-card insight-card--compact">
-        <a class="insight-thumb" href="https://www.tiktok.com/@adozillionhomesandrealty" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#2C4A3E,#1A3028);" aria-label="Open Adozillion TikTok profile — Christmas Bonus and other videos (opens in new tab)">
-          <div class="thumb-bg"><div style="font-size:44px;" aria-hidden="true">🎄</div><div class="thumb-label">TikTok · Adozillion</div></div>
+        <a class="insight-thumb insight-thumb--swap" href="https://www.tiktok.com/@adozillionhomesandrealty/video/7581186733954370834" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#2C4A3E,#1A3028);" aria-label="Open TikTok: Christmas Bonus brand video (opens in new tab)">
+          <img class="thumb-img thumb-img--primary" src="adora-thumbnails/tiktok-christmas-bonus-thumb.jpg" alt="" loading="lazy" decoding="async" width="499" height="1080" />
+          <img class="thumb-img thumb-img--swap" src="adora-thumbnails/tiktok-christmas-bonus-stats.jpg" alt="" loading="lazy" decoding="async" width="499" height="1080" />
           <div class="play-overlay"><div class="play-btn" aria-hidden="true">▶</div></div>
         </a>
         <div class="insight-body">
@@ -599,13 +611,14 @@
             <div class="stat-box"><span class="num">42</span><span class="lbl">Shares</span></div>
             <div class="stat-box"><span class="num">24%</span><span class="lbl">Completion</span></div>
           </div>
-          <a class="watch-link" href="https://www.tiktok.com/@adozillionhomesandrealty" target="_blank" rel="noopener noreferrer">View page →</a>
+          <a class="watch-link" href="https://www.tiktok.com/@adozillionhomesandrealty/video/7581186733954370834" target="_blank" rel="noopener noreferrer">Watch →</a>
         </div>
       </div>
 
       <div class="insight-card insight-card--compact">
-        <a class="insight-thumb" href="https://www.instagram.com/reel/DQCeth-DMM9/" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#B85C2A,#7A3A18);" aria-label="Open Instagram reel: Landers property celebration skit (opens in new tab)">
-          <img class="thumb-img" src="adora-thumbnails/reel-landers.jpg" alt="" loading="lazy" decoding="async" width="361" height="640" />
+        <a class="insight-thumb insight-thumb--swap" href="https://vt.tiktok.com/ZS9fh8pb6/" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#B85C2A,#7A3A18);" aria-label="Open TikTok: Landers property celebration skit (opens in new tab)">
+          <img class="thumb-img thumb-img--primary" src="adora-thumbnails/tiktok-landers-thumb.jpg" alt="" loading="lazy" decoding="async" width="499" height="1080" />
+          <img class="thumb-img thumb-img--swap thumb-img--contain" src="adora-thumbnails/tiktok-landers-stats.jpg" alt="" loading="lazy" decoding="async" width="337" height="378" />
           <div class="play-overlay"><div class="play-btn" aria-hidden="true">▶</div></div>
         </a>
         <div class="insight-body">
@@ -618,7 +631,7 @@
             <div class="stat-box"><span class="num">101</span><span class="lbl">Saves</span></div>
             <div class="stat-box"><span class="num">43</span><span class="lbl">Shares</span></div>
           </div>
-          <a class="watch-link" href="https://www.instagram.com/reel/DQCeth-DMM9/" target="_blank" rel="noopener noreferrer">Watch →</a>
+          <a class="watch-link" href="https://vt.tiktok.com/ZS9fh8pb6/" target="_blank" rel="noopener noreferrer">Watch →</a>
         </div>
       </div>
 
@@ -668,6 +681,42 @@
           <h3 class="work-title">Culturally Rooted Content</h3>
           <p class="work-desc">Content created with deep cultural context, connecting authentically with African audiences.</p>
           <a class="work-link" href="https://www.instagram.com/reel/DI0mmFtM9sE/" target="_blank" rel="noopener noreferrer">Watch →</a>
+        </div>
+      </div>
+      <div class="work-card">
+        <a class="work-thumb" href="https://www.instagram.com/reel/DQCeth-DMM9/" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#2C3E50,#1A252F);" aria-label="Open Instagram reel: Nasimo Contractors soil testing (opens in new tab)">
+          <img class="thumb-img" src="adora-thumbnails/reel-dqceth-dmm9.jpg" alt="" loading="lazy" decoding="async" width="361" height="640" />
+          <div class="play-overlay"><div class="play-btn" aria-hidden="true">▶</div></div>
+        </a>
+        <div class="work-info">
+          <p class="work-tag">Instagram · Nasimo Contractors</p>
+          <h3 class="work-title">Engineering Trust Above Ground</h3>
+          <p class="work-desc">Brand reel underscoring soil testing and solid foundations—messaging aligned with construction credibility.</p>
+          <a class="work-link" href="https://www.instagram.com/reel/DQCeth-DMM9/" target="_blank" rel="noopener noreferrer">Watch →</a>
+        </div>
+      </div>
+      <div class="work-card">
+        <a class="work-thumb" href="https://www.instagram.com/reel/DRxdlrWjSMG/" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#1E3D34,#0F241C);" aria-label="Open Instagram reel: Place à Être December Cotonou (opens in new tab)">
+          <img class="thumb-img" src="adora-thumbnails/reel-drxdlr-wjsmg.jpg" alt="" loading="lazy" decoding="async" width="361" height="640" />
+          <div class="play-overlay"><div class="play-btn" aria-hidden="true">▶</div></div>
+        </a>
+        <div class="work-info">
+          <p class="work-tag">Instagram · Place à Être</p>
+          <h3 class="work-title">December in Cotonou</h3>
+          <p class="work-desc">Bilingual promo for the lifestyle platform—events, rooftops, and how to plan the month on placeaetre.com.</p>
+          <a class="work-link" href="https://www.instagram.com/reel/DRxdlrWjSMG/" target="_blank" rel="noopener noreferrer">Watch →</a>
+        </div>
+      </div>
+      <div class="work-card">
+        <a class="work-thumb" href="https://www.instagram.com/reel/DVghIPDCKLV/" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#161008,#3D2A18);" aria-label="Open Instagram reel: Decode Benin 1.0 event (opens in new tab)">
+          <img class="thumb-img" src="adora-thumbnails/reel-dvghipdcklv.jpg" alt="" loading="lazy" decoding="async" width="361" height="640" />
+          <div class="play-overlay"><div class="play-btn" aria-hidden="true">▶</div></div>
+        </a>
+        <div class="work-info">
+          <p class="work-tag">Instagram · Decode Benin Initiative</p>
+          <h3 class="work-title">Decode Benin 1.0</h3>
+          <p class="work-desc">Event marketing reel—scholarships, placements, and MTN Innovation Lab access for the tech community in Cotonou.</p>
+          <a class="work-link" href="https://www.instagram.com/reel/DVghIPDCKLV/" target="_blank" rel="noopener noreferrer">Watch →</a>
         </div>
       </div>
     </div>
